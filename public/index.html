@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeChat</title>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+    <style>
+        #messages{
+            border:1px solid black;
+            padding:5px 15px;
+            border-radius: 5px;
+            list-style: none;
+            height:300px;
+            overflow:auto;
+        }
+
+        input#texto{
+            width:500px;
+            margin:5px 0px;
+            padding:10px;
+            min-height: 40px;
+        }
+
+        input#username{
+            display:block;
+        }
+
+        #btnEnviar{
+            padding:20px;
+            background-color:greenyellow;
+            border:1px solid green;
+            border-radius:4px;
+            font-weight: bolder;
+            width:10%;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat Node</h1>
+
+    <ul id='messages'></ul>
+
+    <form onsubmit="return addMessage(this)">
+        <input type="text" id="username" placeholder="Tu Nombre" >
+        <input type="text" id="texto" placeholder="Cuéntanos algo...">
+        <input type="submit" id="btnEnviar" value="Enviar">
+    </form>
+</body>
+</html>
